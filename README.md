@@ -1,66 +1,20 @@
-## Foundry
+## Foundry task
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Вам дан `foundry` проект. Ваша задача установить его, запустить тесты на форке **arbitrum** и объяснить, почему именно они не проходят.
 
-Foundry consists of:
+В присланном решении ответьте на следующие вопросы:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+1. Почему не проходит тест (используйте флаг `-vv` чтобы получить подробный результат). Опишите причину подробно.
+2. Найдите конкретную строчку в коде, где происходят вычисления, которые не ожидались при написании теста.
 
-## Documentation
+#### Советы и ссылки
 
-https://book.getfoundry.sh/
+- документация [foundry](https://book.getfoundry.sh/)
 
-## Usage
+- тесты рекомендуется запускать следующей командой:
 
-### Build
-
-```shell
-$ forge build
+```solidity
+forge test -vv --fork-url <your-arbitrum-rpc-url>
 ```
 
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+- бесплатный rpc для арбитрума можно достать [тут](https://www.ankr.com/)
